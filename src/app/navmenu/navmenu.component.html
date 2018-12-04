@@ -1,0 +1,5 @@
+<ul *ngIf="menuopen" [class.expanded] = "menuopen === true">
+  <li *ngFor= " let menuitem of menu">
+      <a routerLink="{{menuitem.link}}" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{menuitem.title}}</a>
+  </li>
+</ul>

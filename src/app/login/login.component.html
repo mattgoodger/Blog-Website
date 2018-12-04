@@ -1,0 +1,34 @@
+<section id="pricing" class="secondary-color text-center scrollto clearfix ">
+    <div class="row clearfix">
+
+      <div class="containter" style="padding-top: 50px">
+
+        <div class="center-form panel">
+
+          <h4 class="text-center"><i class="icon ion-md-log-in"></i> Login</h4>
+
+          <form [formGroup] ="loginForm" (ngSubmit)="login(loginForm.value)">
+            <div class="form-group">
+              <input type="text" class="form-control input-lg" name="email" placeholder="Email" formControlName="email"> 
+              <span class="ion-at form-control-icon"><i class="icon ion-md-mail"></i></span>
+            </div>
+
+            <div class="form-group">
+                <input type="password" class="form-control input-lg" name="password" placeholder="Password" formControlName="password">
+                <span class="ion-key form-control-icon"><i class="icon ion-md-lock"></i></span>
+              </div>
+
+              <button type="submit" class="btn btn-block btn-success"> Login</button>
+
+              <p class="text-center">
+                <small>Don't have an account yet? <a routerLink="/signup"> Sign up here!</a></small>
+              </p>
+
+          </form>
+
+        </div>
+
+      </div>
+
+      </div>
+      </section>

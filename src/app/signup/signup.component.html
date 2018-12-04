@@ -1,0 +1,39 @@
+<section id="pricing" class="secondary-color text-center scrollto clearfix ">
+    <div class="row clearfix">
+
+      <div class="containter" style="padding-top: 50px">
+
+        <div class="center-form panel">
+
+          <h4 class="text-center"><i class="icon ion-md-person-add"></i> Sign up</h4>
+
+          <form [formGroup]="signupForm" (ngSubmit)="signup(signupForm.value)"> 
+            <div class="form-group">
+              <input type="text" class="form-control form-control-names input-lg" formControlName="firstname" name="firstname" placeholder="First name">
+              <input type="text" class="form-control form-control-names input-lg" formControlName="surname" name="surname" placeholder="Surname">
+              <span class="ion-at form-control-icon"><i class="icon ion-md-person"></i></span>
+              </div>
+            <div class="form-group">
+              <input type="text" class="form-control input-lg" formControlName="email" name="email" placeholder="Email">
+              <span class="ion-at form-control-icon"><i class="icon ion-md-mail"></i></span>
+              </div>
+
+            <div class="form-group">
+                <input type="password" class="form-control input-lg" formControlName="password" name="password" placeholder="Password">
+                <span class="ion-key form-control-icon"><i class="icon ion-md-lock"></i></span>
+              </div>
+
+              <button type="submit" class="btn btn-block btn-success"> Register</button>
+
+              <p class="text-center">
+                <small>Already have an account? <a routerLink="/login"> Log in here!</a></small>
+              </p>
+
+          </form>
+
+        </div>
+
+      </div>
+
+      </div>
+      </section>
