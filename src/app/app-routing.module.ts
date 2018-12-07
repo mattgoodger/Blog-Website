@@ -17,6 +17,9 @@ import { SignupComponent } from './signup/signup.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { ArticleEditComponent } from './article-edit/article-edit.component';
 import { ArticleCreateComponent } from './article-create/article-create.component';
+import { UserDashboardModule } from './user-dashboard/user-dashboard.module';
+
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -29,6 +32,7 @@ const routes: Routes = [
   { path: 'testimonials', component: TestimonialComponent },
   { path: 'gallery', component: GalleryComponent },
   { path: 'clients', component: ClientsComponent },
+  { path: 'dashboard', loadChildren: () => UserDashboardModule, canActivate: [RouteguardService]},
   { path: 'blog', component: BlogComponent, canActivate: [RouteguardService] },
   { path: 'article/:id', component: ArticleComponent },
   { path: 'pricing', component: PricingComponent },

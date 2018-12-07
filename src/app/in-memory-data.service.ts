@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { InMemoryDbService, RequestInfo, ResponseOptions, STATUS } from 'angular-in-memory-web-api';
-import { UseExistingWebDriver } from 'protractor/built/driverProviders';
+import { InMemoryDbService, RequestInfo, ResponseOptions } from 'angular-in-memory-web-api';
 
 @Injectable({
   providedIn: 'root'
@@ -11,10 +10,14 @@ export class InMemoryDataService implements InMemoryDbService {
 
   createDb() {
     const users = [
-      { id: 11, firstname: 'Matt', surname: 'Goodger', email: 'matt@test.com', password: 'matt123' },
-      { id: 12, firstname: 'Connor', surname: 'Rhodes', email: 'connor@test.com', password: 'connor123' },
-      { id: 13, firstname: 'Kez', surname: 'Walker', email: 'kez@test.com', password: 'kez123' },
-      { id: 14, firstname: 'Andy', surname: 'Thompson', email: 'andy@test.com', password: 'andy123' }
+      { id: 11, firstname: 'Matt', surname: 'Goodger', email: 'matt@test.com', password: 'matt123',
+      bio: 'this is matts bio', role: 'admin', image: 'user-1.jpg' },
+      { id: 12, firstname: 'Connor', surname: 'Rhodes', email: 'connor@test.com', password: 'connor123',
+      bio: 'this is connors bio', role: 'admin', image: 'user-2.jpg' },
+      { id: 13, firstname: 'Kez', surname: 'Walker', email: 'kez@test.com', password: 'kez123',
+      bio: 'this is kezs bio', role: 'admin', image: 'user-3.jpg' },
+      { id: 14, firstname: 'Andy', surname: 'Thompson', email: 'andy@test.com', password: 'andy123',
+      bio: 'this is andys bio', role: 'admin', image: 'user-4.jpg' }
     ];
 
     const menu = [
@@ -25,7 +28,7 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 5, title: 'testimonials', link: '/testimonials'},
       { id: 6, title: 'clients', link: '/clients'},
       { id: 7, title: 'pricing', link: '/pricing'},
-      { id: 7, title: 'blog', link: '/blog'}
+      { id: 8, title: 'blog', link: '/blog'}
     ];
 
     const posts =  [
@@ -106,6 +109,8 @@ export class InMemoryDataService implements InMemoryDbService {
             id: users.id,
             firstname: users.firstname,
             surname: users.surname,
+            bio: users.bio,
+            image: users.image,
             email: users.email,
             token: this.getToken(users)
           };
