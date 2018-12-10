@@ -3,30 +3,27 @@ import { FormGroup, FormBuilder, Validators, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-contactus',
-  templateUrl: './contactus.component.html',
-  styleUrls: ['./contactus.component.css']
+  selector: 'app-subscribe',
+  templateUrl: './subscribe.component.html',
+  styleUrls: ['./subscribe.component.css']
 })
-export class ContactusComponent implements OnInit {
+export class SubscribeComponent implements OnInit {
 
-  contactusForm: FormGroup;
+  subscribeForm: FormGroup;
   sending: boolean;
 
   constructor(private fb: FormBuilder,
     private router: Router) { }
 
   ngOnInit() {
-    this.contactusForm = this.fb.group({
-      'firstname' : [null, Validators.required],
-      'surname' : [null, Validators.required],
-      'email' : [null, [Validators.required, Validators.email]],
-      'message' : [null, Validators.required],
+    this.subscribeForm = this.fb.group({
+      'email' : [null, [Validators.required, Validators.email]]
     });
-
     this.sending = false;
+
   }
 
-  sendMessage(formData: NgForm) {
+  subscribe(formData: NgForm) {
     this.sending = true;
     console.log(formData);
     setTimeout(() => {
@@ -40,6 +37,6 @@ export class ContactusComponent implements OnInit {
   }
 
   cancelForm() {
-    this.router.navigate([{outlets: { popup: null }}] );
+    this.router.navigate([{outlets: {popup: null }}]);
   }
 }

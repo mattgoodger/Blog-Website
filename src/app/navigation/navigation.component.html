@@ -15,7 +15,9 @@
 
             </div>
             <!--End of Logo-->
-        <aside>
+        <aside style="display: inline; padding: 10px;">
+            <a [routerLink]="[{outlets: {popup: ['contactus'] } } ]"> CONTACT US </a>
+            <a [routerLink]="[{outlets: {popup: ['subscribe'] } } ]"> SUBSCRIBE </a>
             <app-user-profile-icon [profileImage]="profileImage"></app-user-profile-icon>
             <app-social></app-social>
             

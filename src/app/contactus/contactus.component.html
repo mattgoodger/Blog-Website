@@ -1,14 +1,14 @@
-<section id="pricing" class="secondary-color text-center scrollto clearfix">
+
     <div class="row clearfix">
 
       <div class="containter" style="padding-top: 50px">
 
         <div class="center-form panel">
           <div class="panel-body">
-
+            <a  (click)= cancel()><i class="icon ion-md-close"></i> </a>
           <h4 class="text-center"><i class="icon ion-md-person"></i> Contact Us</h4>
 
-          <form [formGroup]="contactusForm" (ngSubmit)="sendMessagecontactusForm.value">
+          <form [formGroup]="contactusForm" (ngSubmit)="sendMessage(contactusForm.value)">
             <div class="form-group">
               <input type="text" class="form-control form-control-names input-lg" formControlName="firstname" name="firstname" placeholder="First name">
               <input type="text" class="form-control form-control-names input-lg" formControlName="surname" name="surname" placeholder="Surname">
@@ -24,11 +24,7 @@
                 <span class="ion-key form-control-icon"><i class="icon ion-md-list"></i></span>
               </div>
 
-              <button type="submit" class="btn btn-block btn-success"> Send Message</button>
-
-              <p class="text-center">
-                <small>Take me <a routerLink="/home"> home</a></small>
-              </p>
+              <button *ngIf="!sending" type="submit" class="btn btn-block btn-success"> Send Message</button>
 
           </form>
 
@@ -37,4 +33,3 @@
     </div>
 
   </div>
-</section>

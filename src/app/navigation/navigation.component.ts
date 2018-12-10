@@ -57,7 +57,6 @@ export class NavigationComponent implements OnInit, AfterContentChecked {
 
 
   logout() {
-    console.log('Logout works');
     this.auth.logout();
 
   }

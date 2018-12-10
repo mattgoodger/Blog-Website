@@ -1,6 +1,10 @@
-:host{position: absolute;
-    bottom: 0;
-    right: 0;}
+:host{position: fixed;
+    width: 500px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px; /* Negative half of height. */
+    margin-left: -250px;}
 
 .container{
     margin-right: auto;
@@ -28,9 +32,7 @@ section{
     margin-bottom: 0px;
     margin-left: auto;
 }
-.panel-body{
 
-}
 .text-center{
     text-align: center;
 }

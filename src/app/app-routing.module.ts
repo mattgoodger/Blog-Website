@@ -18,6 +18,7 @@ import { ContactusComponent } from './contactus/contactus.component';
 import { ArticleEditComponent } from './article-edit/article-edit.component';
 import { ArticleCreateComponent } from './article-create/article-create.component';
 import { UserDashboardModule } from './user-dashboard/user-dashboard.module';
+import { SubscribeComponent } from './subscribe/subscribe.component';
 
 
 
@@ -26,16 +27,17 @@ const routes: Routes = [
   { path: 'home', component: HeaderComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
-  { path: 'contactus', component: ContactusComponent },
+  { path: 'contactus', component: ContactusComponent, outlet: 'popup' },
   { path: 'about', component: IntroComponent },
   { path: 'services', component: ContentComponent },
   { path: 'testimonials', component: TestimonialComponent },
   { path: 'gallery', component: GalleryComponent },
   { path: 'clients', component: ClientsComponent },
+  { path: 'pricing', component: PricingComponent },
+  { path: 'subscribe', component: SubscribeComponent, outlet: 'popup'},
   { path: 'dashboard', loadChildren: () => UserDashboardModule, canActivate: [RouteguardService]},
   { path: 'blog', component: BlogComponent, canActivate: [RouteguardService] },
   { path: 'article/:id', component: ArticleComponent },
-  { path: 'pricing', component: PricingComponent },
   { path: 'article-edit/:id', component: ArticleEditComponent, canActivate: [RouteguardService] },
   { path: 'article-create', component: ArticleCreateComponent, canActivate: [RouteguardService] },
   { path: '404', component: NotfoundComponent },
